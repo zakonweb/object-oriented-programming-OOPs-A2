@@ -1,0 +1,54 @@
+Class Human
+  //ATTRIBUTES
+   PRIVATE Name : STRING
+   PRIVATE Address : STRING
+   PRIVATE Age : INTEGER
+
+   //Class Constructor
+   PUBLIC PROCEDURE Constructor(n : STRING, ad : STRING, ag : INTEGER)
+     Me.Name ← n
+     Me.Ad ← ad
+     Me.Age ← ag
+
+   //SETTERS - METHODS TO SET ATTRIBUTS
+   PUBLIC PROCEDURE setName(n : STRING)
+     Me.Name ← n
+
+   PUBLIC PROCEDURE setAdd(a : STRING)
+     Me.Address ← a
+
+   PUBLIC PROCEDURE setName(a : INTEGER)
+     Me.Age ← a
+
+   //GETTER - METHODS TO RETURN ATTRIBUTES' VALUES
+   PUBLIC FUNCTION tellName() AS STRING
+     RETURN Me.Name
+
+   PUBLIC FUNCTION tellAdd() AS STRING
+     RETURN Me.Address
+
+   PUBLIC FUNCTION tellAge() AS INTEGER
+     RETURN Me.Age
+
+   PUBLIC FUNCTION tellAll() OF STRING
+     DECLARE all : STRING
+     all ← "Name: " + Me.Name + _
+           "   Address: " + Me.Address + _
+           "   Age: " + STR(Me.Age)
+     RETURN all
+
+  //Behavious - METHODS OTHER THAN SETTERS n GETTERS
+  //Smell Method
+  //Walk Method
+  //Digest Method
+  //Action Method
+END Class
+
+DECLARE Ahmed : Human.Constructor("Ahmed Raza Mir", "Karachi, Pakistan", 55)
+DECLARE Ali : Human.Constructor("Ali Raza", "Karachi, Pakistan", 35)
+DECLARE Mohsin : Human.Constructor("Mohsin Khan", "Karachi, Pakistan", 56)
+
+
+
+
+

@@ -1,0 +1,90 @@
+DECLARE Island : IslandClass.Constructor()
+DECLARE Treasure : INTEGER
+
+CALL DisplayGrid()
+
+FOR Treasure ← 1 TO 3
+  CALL Island.HidTreasure()
+NEXT Treasure
+
+CALL StartDig()
+CALL DisplayGrid()
+
+
+PROCEDURE DisplayGrid()
+  DECLARE Row, Col : INTEGER
+  DECLARE X : CHARACTER
+
+  FOR Row ← 0 to 9
+    FOR Col ← 0 TO 29
+      X ← Island.GetSquare(Row, Col)
+      OUTPUT X
+    NEXT Col
+    New Line
+  NEXT 
+END PROCEDURE
+
+PROCEDURE StartDig()
+  DECLARE X, Y : INTEGER
+
+  INPUT "Enter X location", X
+  WHILE X < 0 OR X > 29
+    INPUT "Enter X location", X
+  END WHILE
+
+  INPUT "Enter Y location", Y
+  WHILE Y < 0 OR X > 9
+    INPUT "Enter Y location", Y
+  END WHILE
+
+  CALL Island.DigHole(Y, X)
+END PROCEDURE
+
+Class IslandClass
+  PRIVATE Grid : ARRAY[0:9, 0:29] OF CHAR
+
+  PROCEDURE Constructor()
+    DECLARE row, col : INTEGER
+    CONSTANT Sand ← '.'
+
+    FOR row ← 0 TO 9
+      FOR col ← 0 TO 29
+        Grid[row, col] = Sand
+      NEXT col
+    Next row
+  END PROCEDURE
+
+  PROCEDURE HideTreasure()
+    DECLARE row, col : INTEGER
+    CONSTANT Tresure ← "T"
+
+    row = random(0, 10)
+    col = random(0, 30)
+    WHILE Grid[row, col] = Treasure
+      row = random(0, 10)
+      col = random(0, 30)
+    END WHILE 
+
+    Grid[row, col] ← Treasure
+  END PROCEDURE
+
+  PROCEDURE DigHole(Row : INTEGER, Column : INTEGER)
+    CONSTANT Sand ← "."
+    CONSTANT Treasure ← "T"
+    CONSTANT FoundTreasure ← "X"
+    CONSTANT Hole ← "O"
+
+    IF Grid[Row, Column] = Treasure
+      THEN
+        Grid[Row, Column] = FoundTreasure 
+      ELSE
+        Grid[Row, Column] = Hole 
+    END
+  END PROCEDURE
+
+  FUNCTION GetSquare(Row : INTEGER, Column : INTEGER) AS CHARACTER
+    RETURN Grid[Row, Column]
+  END FUNCTION
+END Class
+
+

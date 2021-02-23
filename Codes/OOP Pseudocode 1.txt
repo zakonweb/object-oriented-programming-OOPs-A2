@@ -1,0 +1,15 @@
+Class Human
+  PRIVATE Name : STR
+  PRIVATE Age : INTEGER
+  PRIVATE Address : STR
+
+  PUBLIC PROCEDURE Constructor(n : STR, Ag : INT, Ad : STR)
+     Me.Name ← n
+     Me.Age ← Ag
+     Me.Address ← Ad
+  END PROCEDURE
+
+  PUBLIC FUNCTION tellName() AS STRING
+    RETURN Me.Name
+  END FUNCTION
+END Class

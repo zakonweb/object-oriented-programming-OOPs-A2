@@ -1,0 +1,75 @@
+(a)
+DIM IsLand as New IslandClass
+Call DisplayGrid()
+For Treasure = 1 to 3
+  Call Island.HideTreasure()
+Next Treasure
+Call StartDig()
+Call DisplayGrid()
+
+
+  Sub DisplayGrid()
+    Dim row, col AS Integer 
+    For row = 0 to 9
+      For col = 0 to 29
+         Console.Write(IsLand.GetSquare(row, col))
+      Next Col
+      Console.Writeline()
+    Next row
+  End Sub
+
+  Sub StartDig()
+   Dim X,Y as integer
+   
+   DO
+     Console.Write("Input row: ") : X = Console.Readline()
+     Console.Write("Input Column: ") : Y = Console.Readline()
+   Loop Until (X >= 0 AND X <=9) AND (Y >= 0 AND Y <=29) 
+
+   Call IsLand.DigHole(X,Y)
+  End Sub
+
+Class IslandClass
+  Private Grid(9,29) As Character 
+
+  Public Sub New()
+    Const Sand = "." 
+    Dim row, col AS Integer 
+    For row = 0 to 9
+      For col = 0 to 29
+         Grid(row, col) = Sand
+      Next Col
+    Next row
+  End Sub
+
+  Public Function GetSquare(ByVal Row AS Integer, ByVal col AS Integer) AS Character
+      Return Grid(row, col)
+  End Function
+  
+  Public Sub HideTreasure()
+    Constant Treasure = "T"
+    Dim row, col AS Integer 
+    Dim RN AS New Random
+    Do     
+      row = RN.Next(0,10)
+      col = RN.Next(0,30)
+    Repeat Until Grid(row,col) <> Tresure
+
+    Grid(row, col) = Tresure
+  End Sub
+
+  Public Sub DigHole(ByVal row as Integer, ByVal Col AS Integer)
+    Constant Treasure = "T"
+    Constant Hole = "O"
+    Constant TreasureFound = "X"   
+
+    If Grid(row, col) = Treasure Then
+       Grid(row, col) = TreasureFound
+    Else
+       Grid(row, col) = Hole
+    End If
+  End Sub
+
+End Class
+
+
