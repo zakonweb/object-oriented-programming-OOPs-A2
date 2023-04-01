@@ -1,0 +1,13 @@
+This code demonstrates the concept of containment in Object-Oriented Programming (OOP) using two classes: question and question_paper. Containment is a way to establish a relationship between classes, where one class (the container) contains objects of another class (the contained).
+
+The question class is the contained class, representing individual questions. It has private attributes for the question, answer, and marks, as well as public methods to get and set these attributes. It also has a constructor that takes the question, answer, and marks as arguments and initializes the object's attributes.
+
+The question_paper class is the container class, representing a collection of question objects. It has private attributes for the number of questions, a list of question objects, and the total marks of the question paper. The constructor of this class takes the number of questions as an argument, initializes the attributes, and then creates the required number of question objects by calling the create_question method.
+
+The create_question method in the question_paper class prompts the user for the question, answer, and marks, and then creates a new question object using the constructor of the question class. The created question object is then appended to the list of questions, and the total marks of the question paper are updated.
+
+The question_paper class also has methods to get a specific question object and the total marks of the question paper.
+
+The main code creates a question_paper object by prompting the user for the number of questions. Then, it displays the total marks of the question paper. The user can enter a question number to get the details of a specific question, or enter 0 to exit the program.
+
+In summary, from the OOP containment point of view, the question_paper class contains a list of question class objects, demonstrating the containment relationship between the two classes. The question_paper class manages and organizes multiple question objects, while the question class represents individual questions.

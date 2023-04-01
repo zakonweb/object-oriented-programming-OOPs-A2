@@ -1,0 +1,11 @@
+In object-oriented programming (OOP), aggregation and containment (also known as composition) are two ways to describe relationships between classes. Both aggregation and containment are types of association relationships that depict how one class can be related to another class. However, they differ in terms of the strength of their relationship and the lifetime of the involved objects.
+
+Aggregation:
+Aggregation is a weaker form of association, often referred to as a "has-a" relationship. In aggregation, an object of one class (container) contains or holds references to objects of another class (contained). The contained objects can exist independently of the container object, and their lifetimes are not bound to each other. When the container object is destroyed, the contained objects are not necessarily destroyed; they can still be accessed or used by other parts of the program.
+For example, imagine a university class Department that has a list of Professor objects. If the Department object is deleted, the Professor objects can still exist and be assigned to other departments. In this case, the relationship between Department and Professor is an aggregation.
+
+Containment (Composition):
+Containment, also known as composition, is a stronger form of association, indicating a strict "part-of" relationship. In containment, the lifetime of the contained objects is directly tied to the lifetime of the container object. When the container object is destroyed, the contained objects are also destroyed and cannot be accessed or used by other parts of the program.
+For example, consider a Car class that has an Engine object. When the Car object is destroyed, the Engine object should also be destroyed, as it is an integral part of the car and cannot exist independently. In this case, the relationship between Car and Engine is a containment (composition).
+
+In summary, aggregation and containment are two types of association relationships in OOP, with the main difference being the strength of the relationship and the lifetime dependency between the container and the contained objects. Aggregation is a weaker relationship where the contained objects can exist independently, while containment is a stronger relationship where the lifetime of the contained objects is bound to the container object.

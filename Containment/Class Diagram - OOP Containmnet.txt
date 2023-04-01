@@ -1,0 +1,32 @@
+Class containment diagram for the given code to help you visualize it:
+
+The diagram would consist of two boxes, one for each class (question and question_paper).
+
+The question class box would contain its attributes (with the private access specifier symbol -:
+
+__question
+__answer
+__marks
+And its methods (with the public access specifier symbol +):
+
+'+ __init__(ques, ans, mar)
+'+ get_question()
+'+ get_answer()
+'+ get_marks()
+'+ set_question(value)
+'+ set_answer(value)
+'+ set_marks(value)
+The question_paper class box would contain its attributes (with the private access specifier symbol -_:
+
+__no_of_questions
+__questions
+__total_marks
+And its methods (with the public access specifier symbol +):
+
++ __init__(no_of_questions)
++ get_question(question_number)
++ get_total_marks()
++ create_question()
+To represent the containment relationship, draw a line with a diamond shape on one end, connecting the two class boxes. The diamond shape should be on the question_paper class box side, pointing towards the question class box. This indicates that the question_paper class contains objects of the question class.
+
+The containment relationship is represented by the list attribute __questions in the question_paper class, which holds multiple question objects.
