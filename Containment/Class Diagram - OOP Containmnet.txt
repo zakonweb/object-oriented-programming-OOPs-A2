@@ -4,23 +4,23 @@ The diagram would consist of two boxes, one for each class (question and questio
 
 The question class box would contain its attributes (with the private access specifier symbol -:
 
-__question
-__answer
-__marks
+- __question
+- __answer
+- __marks
 And its methods (with the public access specifier symbol +):
 
-'+ __init__(ques, ans, mar)
-'+ get_question()
-'+ get_answer()
-'+ get_marks()
-'+ set_question(value)
-'+ set_answer(value)
-'+ set_marks(value)
++ __init__(ques, ans, mar)
++ get_question()
++ get_answer()
++ get_marks()
++ set_question(value)
++ set_answer(value)
++ set_marks(value)
 The question_paper class box would contain its attributes (with the private access specifier symbol -_:
 
-__no_of_questions
-__questions
-__total_marks
+- __no_of_questions
+- __questions
+- __total_marks
 And its methods (with the public access specifier symbol +):
 
 + __init__(no_of_questions)

@@ -22,6 +22,7 @@ class question:
         self.__answer = ans
         self.__marks = mar
 
+    # getters methods
     def get_question(self):
         return self.__question
 
@@ -31,6 +32,7 @@ class question:
     def get_marks(self):
         return self.__marks
 
+    # setters methods
     def set_question(self, value):
         self.__question = value
 
@@ -64,7 +66,7 @@ class question_paper:
         answer = input("Enter answer: ")
         marks = int(input("Enter marks: "))
         this_question = question(quest, answer, marks)  # this is the question object
-        self.__questions.append(this_question)
+        self.__questions.append(this_question)  # containment
         self.__total_marks += marks
 
 
