@@ -114,8 +114,9 @@ CALL DisplayGrid() // output island squares
 """
 # main program
 Island = IslandClass() # instantiate object
-DisplayGrid() # output island squares
+#DisplayGrid() # output island squares
 for Treasure in range(3): # hide 3 treasures
     Island.HideTreasure()
+DisplayGrid() # output island squares
 StartDig() # user to input location of dig
 DisplayGrid() # output island squares
